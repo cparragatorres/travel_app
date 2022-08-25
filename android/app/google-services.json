@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "713860368618",
+    "firebase_url": "https://travel-app-ff4f9-default-rtdb.firebaseio.com",
+    "project_id": "travel-app-ff4f9",
+    "storage_bucket": "travel-app-ff4f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713860368618:android:e16c4a6d9db53d8f6d2f93",
+        "android_client_info": {
+          "package_name": "com.descubreapp.travel_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713860368618-htrgb6t8vq69oro3ebrb1b4g1v61aasv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEQaDmXB7_USD4i4RLzRsv9vVjE0MtroY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713860368618-htrgb6t8vq69oro3ebrb1b4g1v61aasv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
