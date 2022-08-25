@@ -19,13 +19,13 @@ class HomeCustomerPage extends StatefulWidget {
 }
 
 class _HomeCustomerPageState extends State<HomeCustomerPage> {
-  // final FirestoreService _agenciesService =
-  //     FirestoreService(collection: "agency");
+  final FirestoreService _agenciesService =
+      FirestoreService(collection: "agency");
   final FirestoreService _destinationsService =
       FirestoreService(collection: "destination");
 
   List<DestinationModel> destinations = [];
-  // List<AgencyModel> agencies = [];
+  List<AgencyModel> agencies = [];
 
   void initState() {
     // TODO: implement initState
@@ -34,7 +34,7 @@ class _HomeCustomerPageState extends State<HomeCustomerPage> {
   }
 
   getDataFirebase() async {
-    // agencies = await _agenciesService.getAgencies();
+    agencies = await _agenciesService.getAgencies();
     destinations = await _destinationsService.getDestinations();
     setState(() {});
   }

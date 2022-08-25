@@ -51,20 +51,20 @@ class FirestoreService {
 //     return agencies;
 //   }
 // //------------------------------------------------------------------------------
-//   Future<List<AgencyModel>> getAgencies() async {
-//     List<AgencyModel> agencies = [];
-//     QuerySnapshot _querySnapshot = await _collectionReference.get();
-//     _querySnapshot.docs.forEach((element) {
-//       AgencyModel agencyModel =
-//           AgencyModel.fromJson(element.data() as Map<String, dynamic>);
-//       agencyModel.id = element.id;
-//       agencies.add(agencyModel);
-//     });
-//
-//     print(agencies[0].toJson());
-//
-//     return agencies;
-//   }
+  Future<List<AgencyModel>> getAgencies() async {
+    List<AgencyModel> agencies = [];
+    QuerySnapshot _querySnapshot = await _collectionReference.get();
+    _querySnapshot.docs.forEach((element) {
+      AgencyModel agencyModel =
+          AgencyModel.fromJson(element.data() as Map<String, dynamic>);
+      agencyModel.id = element.id;
+      agencies.add(agencyModel);
+    });
+
+    print(agencies[0].toJson());
+
+    return agencies;
+  }
 
 //------------------------------------------------------------------------------
 }
