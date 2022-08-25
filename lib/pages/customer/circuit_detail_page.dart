@@ -75,7 +75,7 @@ class _CircuitDatailPageState extends State<CircuitDatailPage> {
                         CachedNetworkImage(
                           //imagen del Amazonas
                           imageUrl:
-                              "",
+                              widget.destinationModel.image,
                           fadeInCurve: Curves.easeIn,
                           imageBuilder: (context, imageProvider) {
                             return Container(
