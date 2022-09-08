@@ -187,7 +187,7 @@ class _HomeCustomerPageState extends State<HomeCustomerPage> {
                     Align(
                       alignment: Alignment.topCenter,
                       child: TextNormal(
-                        text: "Departamentos",
+                        text: "Departamento",
                       ),
                     ),
                     divider12,
