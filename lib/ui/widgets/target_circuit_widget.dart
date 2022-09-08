@@ -8,26 +8,13 @@ import 'package:travel_app/ui/general/colors.dart';
 import 'package:travel_app/ui/widgets/general_widgets.dart';
 
 class TargetCircuitWidget extends StatefulWidget {
-  String imagen;
-  String nombreAgencia;
-  String nombreCircuito;
-  String departamento;
-  String descripcion;
-  int costo;
-  String partida;
-  String retorno;
+
   DestinationModel destinationModel;
+  AgencyModel agencyModel;
 
   TargetCircuitWidget({
-    required this.imagen,
-    required this.nombreAgencia,
-    required this.nombreCircuito,
-    required this.departamento,
-    required this.descripcion,
-    required this.costo,
-    required this.partida,
-    required this.retorno,
     required this.destinationModel,
+    required this.agencyModel,
   });
 
   @override
@@ -49,14 +36,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
               MaterialPageRoute(
                 builder: (context) => CircuitDatailPage(
                   destinationModel: widget.destinationModel,
-                  retorno: widget.retorno,
-                  partida: widget.partida,
-                  nombreCircuito: widget.nombreCircuito,
-                  nombreAgencia: widget.nombreAgencia,
-                  descripcion: widget.descripcion,
-                  departamento: widget.departamento,
-                  costo: widget.costo,
-                  imagen: widget.imagen,
+                  agencyModel: widget.agencyModel,
                 ),
               ),
             );
@@ -82,7 +62,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                 Stack(
                   children: [
                     CachedNetworkImage(
-                      imageUrl: widget.imagen,
+                      imageUrl: widget.agencyModel.circuit.circuit0.imagepoints.first,
                       fadeInCurve: Curves.easeIn,
                       imageBuilder: (context, imageProvider) {
                         return Hero(
@@ -110,7 +90,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                                   horizontal: 20.0,
                                 ),
                                 child: Text(
-                                  widget.nombreAgencia,
+                                  widget.agencyModel.name,
                                   style: GoogleFonts.poppins(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
@@ -136,7 +116,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            widget.nombreCircuito,
+                            widget.agencyModel.circuit.circuit0.name,
                             style: GoogleFonts.poppins(
                               color: kBrandPrimaryColor,
                               fontSize: 16.0,
@@ -144,7 +124,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                             ),
                           ),
                           Text(
-                            widget.departamento,
+                            widget.agencyModel.department,
                             style: GoogleFonts.poppins(
                               color: kBrandSecondaryColor,
                               fontSize: 16.0,
@@ -155,7 +135,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                       ),
                       divider20,
                       Text(
-                        widget.descripcion,
+                        widget.agencyModel.department,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.poppins(
@@ -193,7 +173,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                                         height: 2),
                                   ),
                                   Text(
-                                    widget.costo.toString(),
+                                    widget.agencyModel.circuit.circuit0.cost.toStringAsFixed(2),
                                     style: GoogleFonts.poppins(
                                       color: Colors.black,
                                       fontSize: 30.0,
@@ -207,7 +187,7 @@ class _TargetCircuitWidgetState extends State<TargetCircuitWidget> {
                         ],
                       ),
                       Text(
-                        "Partida: ${widget.partida} | Retorno: ${widget.retorno}",
+                        "Partida: ${widget.agencyModel.circuit.circuit0.departure} | Retorno: ${widget.agencyModel.circuit.circuit0.comeback}",
                         style: GoogleFonts.poppins(
                           color: kBrandSecondaryColor,
                           fontSize: 14.0,

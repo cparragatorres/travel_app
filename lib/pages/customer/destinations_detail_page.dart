@@ -8,12 +8,30 @@ import 'package:travel_app/ui/widgets/general_widgets.dart';
 import 'package:travel_app/ui/widgets/target_circuit_widget.dart';
 import 'package:travel_app/ui/widgets/text_widget.dart';
 
+import '../../services/firestore_service.dart';
+
+//PAGINA 2
+
 class DestinationsDetailPage extends StatelessWidget {
   DestinationModel destinationModel;
+  AgencyModel agencyModel;
 
   DestinationsDetailPage({
     required this.destinationModel,
+    required this.agencyModel,
   });
+
+  final FirestoreService _agenciesService =
+  FirestoreService(collection: "agency");
+
+
+  List<AgencyModel> agencies = [];
+
+
+  getDataFirebase() async {
+    agencies = await _agenciesService.getAgencies();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +61,8 @@ class DestinationsDetailPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TargetCircuitWidget(
-                  imagen: destinationModel.image,
-                  costo: 51,
-                  departamento: destinationModel.department,
-                  descripcion: destinationModel.department,
-                  nombreAgencia: destinationModel.nombreagencia,
-                  nombreCircuito: destinationModel.department,
-                  partida: destinationModel.department,
-                  retorno: destinationModel.department,
                   destinationModel: destinationModel,
+                  agencyModel: agencies[index],
                 ),
                 divider20,
               ],

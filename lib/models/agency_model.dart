@@ -63,24 +63,24 @@ class Circuit {
 
 class Circuit0Class {
   Circuit0Class({
-    required this.image,
     required this.cost,
+    required this.imagepoints,
     required this.name,
     required this.departure,
     required this.comeback,
     required this.points,
   });
 
-  List<String> image;
   int cost;
+  List<String> imagepoints;
   String name;
   String departure;
   String comeback;
   List<String> points;
 
   factory Circuit0Class.fromJson(Map<String, dynamic> json) => Circuit0Class(
-        image: List<String>.from(json["image"].map((x) => x)),
         cost: json["cost"],
+        imagepoints: List<String>.from(json["imagepoints"].map((x) => x)),
         name: json["name"],
         departure: json["departure"],
         comeback: json["comeback"],
@@ -88,8 +88,8 @@ class Circuit0Class {
       );
 
   Map<String, dynamic> toJson() => {
-        "image": List<dynamic>.from(image.map((x) => x)),
         "cost": cost,
+        "imagepoints": List<dynamic>.from(imagepoints.map((x) => x)),
         "name": name,
         "departure": departure,
         "comeback": comeback,

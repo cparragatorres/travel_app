@@ -13,6 +13,8 @@ import 'package:travel_app/ui/widgets/text_widget.dart';
 
 import '../../ui/general/colors.dart';
 
+//PAGINA 1
+
 class HomeCustomerPage extends StatefulWidget {
   @override
   State<HomeCustomerPage> createState() => _HomeCustomerPageState();
@@ -204,6 +206,7 @@ class _HomeCustomerPageState extends State<HomeCustomerPage> {
                         itemBuilder: (context, index) =>
                             ItemGridDepartamentosWidget(
                           destinationModel: destinations[index],
+                              agencyModel: agencies[index],
                         ),
                       ),
                     ),

@@ -32,7 +32,7 @@ class FirestoreService {
       destinations.add(destinationModel);
     });
 
-    // print(destinations[1].toJson());
+    print(destinations[1].toJson());
 
     return destinations;
   }
@@ -61,7 +61,7 @@ class FirestoreService {
       agencies.add(agencyModel);
     });
 
-    print(agencies[0].toJson());
+    // print(agencies[0].toJson());
 
     return agencies;
   }

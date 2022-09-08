@@ -8,9 +8,11 @@ import 'package:travel_app/ui/general/colors.dart';
 
 class ItemGridDepartamentosWidget extends StatefulWidget {
   DestinationModel destinationModel;
+  AgencyModel agencyModel;
 
   ItemGridDepartamentosWidget({
     required this.destinationModel,
+    required this.agencyModel,
   });
 
   @override
@@ -32,6 +34,7 @@ class _ItemGridDepartamentosState extends State<ItemGridDepartamentosWidget> {
           MaterialPageRoute(
             builder: (context) => DestinationsDetailPage(
               destinationModel: widget.destinationModel,
+              agencyModel: widget.agencyModel,
             ),
           ),
         );

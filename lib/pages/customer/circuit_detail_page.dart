@@ -11,28 +11,16 @@ import 'package:travel_app/ui/widgets/general_widgets.dart';
 import 'package:travel_app/ui/widgets/point_widget.dart';
 import 'package:travel_app/ui/widgets/text_widget.dart';
 
+//PAGINA 3
+
 class CircuitDatailPage extends StatefulWidget {
   DestinationModel destinationModel;
-  String imagen;
-  String nombreAgencia;
-  String nombreCircuito;
-  String departamento;
-  String descripcion;
-  int costo;
-  String partida;
-  String retorno;
+  AgencyModel agencyModel;
 
 
   CircuitDatailPage({
     required this.destinationModel,
-    required this.imagen,
-    required this.nombreAgencia,
-    required this.nombreCircuito,
-    required this.departamento,
-    required this.descripcion,
-    required this.costo,
-    required this.partida,
-    required this.retorno,
+    required this.agencyModel,
 
   });
 
@@ -105,6 +93,7 @@ class _CircuitDatailPageState extends State<CircuitDatailPage> {
                                 MaterialPageRoute(
                                   builder: (context) => DestinationsDetailPage(
                                     destinationModel: widget.destinationModel,
+                                    agencyModel: widget.agencyModel,
                                   ),
                                 ),
                               );
@@ -143,7 +132,7 @@ class _CircuitDatailPageState extends State<CircuitDatailPage> {
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 8.0, horizontal: 8.0),
                                         child: Text(
-                                          "S/ ${widget.costo.toStringAsFixed(2)}",
+                                          "S/ ${widget.agencyModel.circuit.circuit0.cost.toStringAsFixed(2)}",
                                           style: GoogleFonts.poppins(
                                             color: Colors.white,
                                             fontSize: 24,
@@ -162,7 +151,7 @@ class _CircuitDatailPageState extends State<CircuitDatailPage> {
                                       ),
                                     ),
                                     TextNormal(
-                                      text: widget.nombreCircuito,
+                                      text: widget.agencyModel.circuit.circuit0.name,
                                       color: Colors.white,
                                     ),
                                     divider6,
@@ -245,7 +234,7 @@ class _CircuitDatailPageState extends State<CircuitDatailPage> {
                                   color: kBrandPrimaryColor),
                               dividerWidth10,
                               Text(
-                                widget.departamento,
+                                widget.destinationModel.department,
                                 style: GoogleFonts.poppins(
                                     color: Colors.grey[800],
                                     fontSize: 18,
@@ -257,7 +246,7 @@ class _CircuitDatailPageState extends State<CircuitDatailPage> {
                           Align(
                             alignment: Alignment.center,
                             child: Text(
-                              widget.descripcion,
+                              widget.agencyModel.circuit.circuit0.name,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
                                 color: Colors.grey,
